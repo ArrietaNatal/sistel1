@@ -1,19 +1,4 @@
-%Ejemplo de Paper para la URSI 2010
-% respecto a plantillas anteriores cambio de latin1 a utf8
-% para que salgan las cosas en castellano...
-% para que salgan las cosas en castellano...
-% para que salgan las cosas en castellano...
-% para que salgan las cosas en castellano...
-% Fuente Times...
-% figuras en formato .png, .ps, pdf ó eps
-% Fuente Times...
-% figuras en formato .png, .ps, pdf ó eps
-% Fuente Times...
-% figuras en formato .png, .ps, pdf ó eps
-% Fuente Times...
-% figuras en formato .png, .ps, pdf ó eps
-%\usepackage[spanish]{babel}
-
+% Preamble
 \documentclass[10pt,conference,a4paper]{IEEEtran}%
 \usepackage{amsmath}
 \usepackage{ucs}
@@ -24,70 +9,55 @@
 \usepackage{amsfonts}%
 \usepackage{amssymb}
 \usepackage{url}
-%TCIDATA{OutputFilter=latex2.dll}
-%TCIDATA{Version=5.00.0.2606}
-%TCIDATA{LastRevised=Friday, February 13, 2009 11:03:49}
-%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
-%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
-%TCIDATA{BibliographyScheme=Manual}
+
+% Style
 \newcommand{\CLASSINPUTinnersidemargin}{18mm}
 \newcommand{\CLASSINPUToutersidemargin}{12mm}
 \newcommand{\CLASSINPUTtoptextmargin}{20mm}
 \newcommand{\CLASSINPUTbottomtextmargin}{25mm}
 \DeclareGraphicsExtensions{.png,.eps,.ps,.pdf}
-\begin{document}
 
-\title{COLOQUE AQUÍ EL TÍTULO}
-\author{\authorblockN{Nombre del Primer Autor, Nombre del Segundo
-Autor.} \authorblockA{E-mail Primer Autor, E-mail Segundo Autor.}
-\authorblockA{Grado en Tecnologias y Servicios de Telecomunicacion. Universidad de Oviedo.}
-\authorblockA{Sistemas de Telecomunicaci�n. Curso 2013-14.} }
+% Document
+\begin{document}
+\title{CARACTERIZACIÓN DE MEDIOS DE TRANSMISIÓN}
+\author{\authorblockN{Pablo Arrieta Nata, Daniel Iñigo Baños.}
+    \authorblockA{E-mail Primer Autor, uo194823@uniovi.es.}
+    \authorblockA{Grado en Tecnologias y Servicios de Telecomunicacion. Universidad de Oviedo.}
+    \authorblockA{Sistemas de Telecomunicación. Curso 2013-14.} }
 \maketitle
 
 \begin{abstract}
-Este documento presenta la plantilla para el XXV Simposium Nacional de la
-Unión Científica Internacional de Radio (URSI). La Universidad del País Vasco/Euskal Herriko
-Unibertsitatea (UPV/EHU) organiza la presente edición de la URSI. El abstract
-o resumen de la comunicación debe estar en \underline{INGLÉS} y debe contener
-entre 100 y 150 palabras. El tipo de letra para el abstract es Times New Roman
-en negrita con tamaño 9 puntos, tal y como aparece en este documento. Esta
-plantilla ha sido generada tomando como base el estándar de documentos IEEE.
-Por favor, utilice la misma como documento base para el trabajo que desee
-enviar a URSI 2010. Cualquier cuestión sobre el envío de los artículos debe
-dirigirse a la secretaría técnica del congreso (\url{ponencias@ursi2010.org}).
-Para más información sobre la organización y desarrollo del congreso se puede
-consultar la dirección: \url{http://www.ursi2010.org}.
-
+    Los medios de transmisión guiados y no guiados, como son el cable y la radiofrecuencia, presentan ventajas unos frente a otros en diferentes aspectos. Por esto, dependiendo del tipo de transmisión que se quiera realizar se emplea uno u otro. A continuación se estudian independientemente y se realiza una breve comparación.
 \end{abstract}
 
 \section{Introducción}
 
 Esta plantilla puede encontrarse en el sitio web dedicado al simposium. Este
-documento es un ejemplo del formato de presentación deseado, y contiene
-información concerniente al diseño general del documento, tipo de letra, y
-tamaños de tipografía apropiados. El cuerpo del artículo se escribirá en
-castellano. El trabajo tendrá una extensión no superior a 4 páginas. Este
-fichero debería servir como punto de partida para los artículos enviados a
-URSI 2010 producidos bajo \LaTeX\ usando IEEEtran.cls versión 1.6 y posteriores.
+documento es un ejemplo del formato de presentaciÃ³n deseado, y contiene
+informaciÃ³n concerniente al diseÃ±o general del documento, tipo de letra, y
+tamaÃ±os de tipografÃ­a apropiados. El cuerpo del artÃ­culo se escribirÃ¡ en
+castellano. El trabajo tendrÃ¡ una extensiÃ³n no superior a 4 pÃ¡ginas. Este
+fichero deberÃ­a servir como punto de partida para los artÃ­culos enviados a
+URSI 2010 producidos bajo \LaTeX\ usando IEEEtran.cls versiÃ³n 1.6 y posteriores.
 
 \section{Formato}
 
-Utilice tipografía Times New Roman. El tamaño para el cuerpo del texto es de
-10 puntos y para el Título del artículo 24 puntos. Utilice formato A4 (21 x
-29,7 cm), ajuste los márgenes superior e inferior a 2 y 2,5 cm
+Utilice tipografÃ­a Times New Roman. El tamaÃ±o para el cuerpo del texto es de
+10 puntos y para el TÃ­tulo del artÃ­culo 24 puntos. Utilice formato A4 (21 x
+29,7 cm), ajuste los mÃ¡rgenes superior e inferior a 2 y 2,5 cm
 respectivamente, el margen izquierdo a 1,8 cm y el derecho a 1,2 cm. El
-artículo deberá ir a dos columnas con un espaciado entre columnas de 0,42 cm.
-Justifique las columnas tanto a izquierda como a derecha. Los párrafos deberán
+artÃ­culo deberÃ¡ ir a dos columnas con un espaciado entre columnas de 0,42 cm.
+Justifique las columnas tanto a izquierda como a derecha. Los pÃ¡rrafos deberÃ¡n
 ser escritos a simple espacio.
 
 \subsection{Figuras y Tablas}
 
-El tamaño para los títulos de las tablas, figuras y notas al pie de página es
-de 8 puntos. Todas las figuras y tablas aparecerán centradas en la columna
-(las figuras y tablas de gran tamaño podrán extenderse sobre ambas columnas);
-evite ubicarlas en medio de las columnas. La descripción de las figuras y las
-tablas deberá ubicarse debajo de las mismas. Use la abreviatura Fig. x para
-referirse a una figura o gráfico y Tabla x para referirse a una tabla. Los
+El tamaÃ±o para los tÃ­tulos de las tablas, figuras y notas al pie de pÃ¡gina es
+de 8 puntos. Todas las figuras y tablas aparecerÃ¡n centradas en la columna
+(las figuras y tablas de gran tamaÃ±o podrÃ¡n extenderse sobre ambas columnas);
+evite ubicarlas en medio de las columnas. La descripciÃ³n de las figuras y las
+tablas deberÃ¡ ubicarse debajo de las mismas. Use la abreviatura Fig. x para
+referirse a una figura o grÃ¡fico y Tabla x para referirse a una tabla. Los
 pies de las figuras y de las tablas deben seguir el formato mostrado bajo la
 Fig. 1.
 
@@ -108,52 +78,52 @@ Fig. 1.
 %\end{table}
 
 \begin{figure}[pth]
-\centering\includegraphics [width=8.7 cm]
-{Identidad_Grafica_URSI.png}\caption{Identidad Gráfica de la URSI 2010}%
+    \centering\includegraphics [width=8.7 cm]
+    {Identidad_Grafica_URSI.png}\caption{Identidad GrÃ¡fica de la URSI 2010}%
 \end{figure}
 
 \subsection{Ecuaciones}
 
-Las ecuaciones matemáticas deben estar situadas en líneas distintas y cada
-ecuación matemática debe ser numerada:
+Las ecuaciones matemÃ¡ticas deben estar situadas en lÃ­neas distintas y cada
+ecuaciÃ³n matemÃ¡tica debe ser numerada:
 \begin{equation}
-\underset{t\rightarrow\infty}{\lim}x(t)=\frac{s[f_{\omega}(t)]}{\cos
-^{-1}\theta}%
+    \underset{t\rightarrow\infty}{\lim}x(t)=\frac{s[f_{\omega}(t)]}{\cos
+    ^{-1}\theta}%
 \end{equation}
 
-\subsection{Numeración de páginas}
+\subsection{NumeraciÃ³n de pÃ¡ginas}
 
-No aplique ninguna numeración de página. La numeración se añadirá en el
-proceso final de confección de las actas en CD-ROM. Por favor deje la
-numeración tal como está en el documento modelo.
+No aplique ninguna numeraciÃ³n de pÃ¡gina. La numeraciÃ³n se aÃ±adirÃ¡ en el
+proceso final de confecciÃ³n de las actas en CD-ROM. Por favor deje la
+numeraciÃ³n tal como estÃ¡ en el documento modelo.
 
 \subsection{Referencias}
 
-Las referencias serán numeradas en orden de aparición [1]. El formato de
-referencias será el estándar del IEEE. Se muestra algún ejemplo en el apartado correspondiente.
+Las referencias serÃ¡n numeradas en orden de apariciÃ³n [1]. El formato de
+referencias serÃ¡ el estÃ¡ndar del IEEE. Se muestra algÃºn ejemplo en el apartado correspondiente.
 
-\subsection{Uno o más autores}
+\subsection{Uno o mÃ¡s autores}
 
-En caso de tener uno, dos o más de tres autores, adapte la zona
-correspondiente a autores y afiliación de manera oportuna. Intente no variar
-de manera notable el aspecto y tamaño de la zona.
+En caso de tener uno, dos o mÃ¡s de tres autores, adapte la zona
+correspondiente a autores y afiliaciÃ³n de manera oportuna. Intente no variar
+de manera notable el aspecto y tamaÃ±o de la zona.
 
 \section{Conclusiones}
 
-El seguimiento de las normas indicadas permitirá que su trabajo resulte
+El seguimiento de las normas indicadas permitirÃ¡ que su trabajo resulte
 visualmente atractivo y que de lugar a impresiones de calidad. Esta misma
 plantilla se puede encontrar en los formatos OpenDocument (ISO/IEC 26300:2006)
-y Microsoft Word\textsuperscript{\textregistered} en la dirección web oficial del Simposium.
+y Microsoft Word\textsuperscript{\textregistered} en la direcciÃ³n web oficial del Simposium.
 
-%Bibliografía
+%BibliografÃ­a
 
 \begin{thebibliography}{9}                                                                                                %
-\bibitem {ref libro}C. Jones and K. Jones, \emph{How to publish a paper in 30
-seconds,} 233rd ed., It is a Joke, Republic of Chiquitistan, 2009.
+    \bibitem {ref libro}C. Jones and K. Jones, \emph{How to publish a paper in 30
+	seconds,} 233rd ed., It is a Joke, Republic of Chiquitistan, 2009.
 
-\bibitem {ref articulo}K. Jones and L.Grijander, \textquotedblleft How to use
-the copy and paste tool\textquotedblright\ Trans. on Phys. Rev., vol. 234, no.
-7, pp. 635-646, Dec. 1935.
+    \bibitem {ref articulo}K. Jones and L.Grijander, \textquotedblleft How to use
+	the copy and paste tool\textquotedblright\ Trans. on Phys. Rev., vol. 234, no.
+	7, pp. 635-646, Dec. 1935.
 \end{thebibliography}
 
 
