@@ -1,12 +1,13 @@
-% Preamble
-\documentclass[10pt,conference,a4paper]{IEEEtran}%
+% ------------- PREAMBLE ------------- %
+% Currently using IEEEtran 1.8
+\documentclass[10pt,conference,a4paper]{IEEEtran}
 \usepackage{amsmath}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 \usepackage{times}
-\usepackage{graphicx}%
-\setcounter{MaxMatrixCols}{30}%
-\usepackage{amsfonts}%
+\usepackage{graphicx}
+\setcounter{MaxMatrixCols}{30}
+\usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{url}
 
@@ -15,40 +16,43 @@
 \newcommand{\CLASSINPUToutersidemargin}{12mm}
 \newcommand{\CLASSINPUTtoptextmargin}{20mm}
 \newcommand{\CLASSINPUTbottomtextmargin}{25mm}
-\DeclareGraphicsExtensions{.png,.eps,.ps,.pdf}
+\DeclareGraphicsExtensions{.png,.eps,.ps,.pdf,.jpg}
+% Hack para corregir las cabeceras de tablas de IEEEtran. Con esto figuras y tablas tienen el mismo formato.
+\makeatletter \def\@IEEEtablestring{} \makeatother
 
-% Document
-\begin{document}
+% ------------- DOCUMENT ------------- %
 \title{CARACTERIZACIÓN DE MEDIOS DE TRANSMISIÓN}
-\author{\authorblockN{Pablo Arrieta Nata, Daniel Iñigo Baños.}
-    \authorblockA{E-mail Primer Autor, uo194823@uniovi.es.}
-    \authorblockA{Grado en Tecnologias y Servicios de Telecomunicacion. Universidad de Oviedo.}
-    \authorblockA{Sistemas de Telecomunicación. Curso 2013-14.} }
+\author{
+    \IEEEauthorblockN{Pablo Arrieta Nata, Daniel Iñigo Baños.}
+    \IEEEauthorblockA{E-mail Primer Autor, uo194823@uniovi.es.}
+    \IEEEauthorblockA{Grado en Tecnologias y Servicios de Telecomunicacion. Universidad de Oviedo.}
+    \iEEEauthorblockA{Sistemas de Telecomunicación. Curso 2013-14.}
+}
+\begin{document}
 \maketitle
 
 \begin{abstract}
-    Los medios de transmisión guiados y no guiados, como son el cable y la radiofrecuencia, presentan ventajas unos frente a otros en diferentes aspectos. Por esto, dependiendo del tipo de transmisión que se quiera realizar se emplea uno u otro. A continuación se estudian independientemente y se realiza una breve comparación.
+    Los medios de transmisión guiados y no guiados, como son el cable coaxial y el canal WiFi, presentan ventajas unos frente a otros en diferentes aspectos. Por esto, dependiendo del tipo de transmisión que se quiera realizar se emplea uno u otro. A continuación se estudian independientemente y se realiza una breve comparación a partir de su análisis en frecuencia.
 \end{abstract}
 
-\section{Introducción}
+% ------------------------------------------- %
+% ------------- PRIMER MONTAJE  ------------- %
+% ------------------------------------------- %
+\section{Primer Montaje}
+Empleando un analizador de redes se mide la respuesta en frecuencia de un cable coaxial mediante el parámetro &s_{2,1}& en el ancho de banda de 1[MHz] a 2[GHz]. Se transmiten 0[dBm], que es 1[mW]. El &s_{2,1}& representa la función de transferencia del cable en módulo-fase.
 
-Esta plantilla puede encontrarse en el sitio web dedicado al simposium. Este
-documento es un ejemplo del formato de presentaciÃ³n deseado, y contiene
-informaciÃ³n concerniente al diseÃ±o general del documento, tipo de letra, y
-tamaÃ±os de tipografÃ­a apropiados. El cuerpo del artÃ­culo se escribirÃ¡ en
-castellano. El trabajo tendrÃ¡ una extensiÃ³n no superior a 4 pÃ¡ginas. Este
-fichero deberÃ­a servir como punto de partida para los artÃ­culos enviados a
-URSI 2010 producidos bajo \LaTeX\ usando IEEEtran.cls versiÃ³n 1.6 y posteriores.
+\subsection{Figuras y Tablas}
 
-\section{Formato}
-
-Utilice tipografÃ­a Times New Roman. El tamaÃ±o para el cuerpo del texto es de
-10 puntos y para el TÃ­tulo del artÃ­culo 24 puntos. Utilice formato A4 (21 x
-29,7 cm), ajuste los mÃ¡rgenes superior e inferior a 2 y 2,5 cm
-respectivamente, el margen izquierdo a 1,8 cm y el derecho a 1,2 cm. El
-artÃ­culo deberÃ¡ ir a dos columnas con un espaciado entre columnas de 0,42 cm.
-Justifique las columnas tanto a izquierda como a derecha. Los pÃ¡rrafos deberÃ¡n
-ser escritos a simple espacio.
+%\begin{figure}[htb]
+    %\centering
+    %\includegraphics[width=\columnwidth]{folder/widthfile.eps}
+    %\caption{This is the caption text}
+    %\label{fig:graph}
+%\end{figfigure}
+% -------------------------------------------- %
+% ------------- SEGUNDO MONTAJE  ------------- %
+% -------------------------------------------- %
+\section{Segundo Montaje}
 
 \subsection{Figuras y Tablas}
 
@@ -77,10 +81,12 @@ Fig. 1.
 %\end{center}
 %\end{table}
 
-\begin{figure}[pth]
-    \centering\includegraphics [width=8.7 cm]
-    {Identidad_Grafica_URSI.png}\caption{Identidad GrÃ¡fica de la URSI 2010}%
-\end{figure}
+%\begin{figure}[htb]
+    %\centering
+    %\includegraphics[width=\columnwidth]{folder/widthfile.eps}
+    %\caption{This is the caption text}
+    %\label{fig:graph}
+%\end{figfigure}
 
 \subsection{Ecuaciones}
 
@@ -88,7 +94,7 @@ Las ecuaciones matemÃ¡ticas deben estar situadas en lÃ­neas distintas y cada
 ecuaciÃ³n matemÃ¡tica debe ser numerada:
 \begin{equation}
     \underset{t\rightarrow\infty}{\lim}x(t)=\frac{s[f_{\omega}(t)]}{\cos
-    ^{-1}\theta}%
+    ^{-1}\theta}
 \end{equation}
 
 \subsection{NumeraciÃ³n de pÃ¡ginas}
