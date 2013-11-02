@@ -23,10 +23,10 @@
 % ------------- DOCUMENT ------------- %
 \title{CARACTERIZACIÓN DE MEDIOS DE TRANSMISIÓN}
 \author{
-    \IEEEauthorblockN{Pablo Arrieta Nata, Daniel Iñigo Baños.}
-    \IEEEauthorblockA{E-mail Primer Autor, uo194823@uniovi.es.}
-    \IEEEauthorblockA{Grado en Tecnologias y Servicios de Telecomunicacion. Universidad de Oviedo.}
-    \iEEEauthorblockA{Sistemas de Telecomunicación. Curso 2013-14.}
+    \authorblockN{Pablo Arrieta Nata, Daniel Iñigo Baños.}
+    \authorblockA{E-mail Primer Autor, uo194823@uniovi.es.}
+    \authorblockA{Grado en Tecnologias y Servicios de Telecomunicacion. Universidad de Oviedo.}
+    \authorblockA{Sistemas de Telecomunicación. Curso 2013-14.}
 }
 \begin{document}
 \maketitle
@@ -39,7 +39,59 @@
 % ------------- PRIMER MONTAJE  ------------- %
 % ------------------------------------------- %
 \section{Primer Montaje}
-Empleando un analizador de redes se mide la respuesta en frecuencia de un cable coaxial mediante el parámetro &s_{2,1}& en el ancho de banda de 1[MHz] a 2[GHz]. Se transmiten 0[dBm], que es 1[mW]. El &s_{2,1}& representa la función de transferencia del cable en módulo-fase.
+Empleando un analizador de redes se mide la respuesta en frecuencia de un cable coaxial mediante el parámetro $s_{2,1}$ en el ancho de banda de 1[MHz] a 2[GHz]. Se transmiten 0[dBm], que es 1[mW]. El $s_{2,1}$ representa la función de transferencia del cable en módulo-fase.
+A partir de los datos experimentales se mide la atenuación que introduce el cable como $-H(f)$ y se compara con los del fabricante (tabla \ref{tab:atenuacion_coaxial}) y con el modelo teórico según la ecuación \ref{eq:atenuacion_coaxial}.
+Se observa en la figura \ref{fig:atenuacion_comparada} que la atenuación experimental se encuentra entre la que predice el modelo teórico y la que proporciona el fabricante. Esto se debe a que el modelo desprecia muchos factores que influyen en la atenuación y el fabricante trata de dar una cota superior de este añadiendo un margen.
+La constante
+
+La respuesta al impulso que calculamos es compleja y no causal. Hay que hace el módulo y eliminar la parte negativa del eje de tiempo. 
+
+
+La velocidad de propagación por el cable se puede calcular como  $$v_p = \frac{1}{t_d} = \frac{1}{4.55 [ns/m]} = 219.780 \cdot 10^6 [m/s]$$ Según el fabricante la velocidad de propagación es del 66$%$ de la velocidad de la luz $$v_p = 0.66 \cdot 3 \cdot 10^8 [m/s] =  198 \cdot 10^6 [m/s]$$ Se tiene un error en la velocidad de propagación del $9.88%$ respecto al valor del fabricante.
+
+
+
+\begin{eqnarray}
+\label{eq:atenuacion_coaxial}
+\alpha = \sqrt(\frac{\rho \omega \epsilon}{2}} \frac{\frac{1}{d_i} + \frac{1}{d_e}}{\ln{\frac{d_e}{d_i}}
+\end{eqnarray}
+
+\subsection{Figuras y Tablas}
+
+\begin{table}[htb]
+	\renewcommand{\arraystretch}{1.2}
+	\centering
+	% Number of cells must be declared when opening the table and so the separator.
+	\begin{tabular}{|c|c|}
+	\hline
+	Frecuencia[MHz] & Atenuación [dB/100m] \\
+	\hline
+	1 & 1.3124 \\
+	10 & 4.5934 \\
+	50 & 10.8273 \\	
+	100 & 16.0769 \\
+	200 & 23.9513 \\
+	400 & 37.7315 \\
+	700 & 55.777 \\
+	900 & 65.62 \\
+	1000 & 70.5415 \\
+	\hline
+	\end{tabular}
+\caption{Atenuación en función de la frecuencia que proporciona el fabricante.}
+\label{tab:atenuacion_coaxial}
+\end{table}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\columnwidth]{figuras/atenuacion_comparada.eps}
+    \caption{Atenuación por unidad de longitud en función de la frecuencia en un cable coaxial Belden}
+    \label{fig:atenuacion_comparada}
+\end{figure}
+
+% -------------------------------------------- %
+% ------------- SEGUNDO MONTAJE  ------------- %
+% -------------------------------------------- %
+\section{Segundo Montaje}
 
 \subsection{Figuras y Tablas}
 
@@ -49,21 +101,6 @@ Empleando un analizador de redes se mide la respuesta en frecuencia de un cable 
     %\caption{This is the caption text}
     %\label{fig:graph}
 %\end{figfigure}
-% -------------------------------------------- %
-% ------------- SEGUNDO MONTAJE  ------------- %
-% -------------------------------------------- %
-\section{Segundo Montaje}
-
-\subsection{Figuras y Tablas}
-
-El tamaÃ±o para los tÃ­tulos de las tablas, figuras y notas al pie de pÃ¡gina es
-de 8 puntos. Todas las figuras y tablas aparecerÃ¡n centradas en la columna
-(las figuras y tablas de gran tamaÃ±o podrÃ¡n extenderse sobre ambas columnas);
-evite ubicarlas en medio de las columnas. La descripciÃ³n de las figuras y las
-tablas deberÃ¡ ubicarse debajo de las mismas. Use la abreviatura Fig. x para
-referirse a una figura o grÃ¡fico y Tabla x para referirse a una tabla. Los
-pies de las figuras y de las tablas deben seguir el formato mostrado bajo la
-Fig. 1.
 
 %Ejemplo de Tabla:
 %\begin{table}
