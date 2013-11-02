@@ -32,7 +32,7 @@
 *.xdy
 *.tdo
 IEEEtran.cls
-*.pdf
+/*.pdf
 *.bak
 *.gnuplot
 figuras/*.fig
