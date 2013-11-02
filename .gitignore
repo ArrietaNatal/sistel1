@@ -36,3 +36,4 @@ IEEEtran.cls
 *.bak
 *.gnuplot
 figuras/*.fig
+/medidas
