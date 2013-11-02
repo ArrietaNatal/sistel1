@@ -39,19 +39,26 @@
 % ------------- PRIMER MONTAJE  ------------- %
 % ------------------------------------------- %
 \section{Primer Montaje}
-Empleando un analizador de redes se mide la respuesta en frecuencia de un cable coaxial mediante el parámetro $s_{2,1}$ en el ancho de banda de 1[MHz] a 2[GHz]. Se transmiten 0[dBm], que es 1[mW]. El $s_{2,1}$ representa la función de transferencia del cable en módulo-fase.
+Empleando un analizador de redes se mide la respuesta en frecuencia de un cable coaxial mediante el parámetro $s_{2,1}$ en el ancho de banda de 1[MHz] a 2[GHz]. Se transmite una potencia de 0[dBm]. El $s_{2,1}$ representa la función de transferencia del cable en módulo-fase.
 A partir de los datos experimentales se mide la atenuación que introduce el cable como $-H(f)$ y se compara con los del fabricante (tabla \ref{tab:atenuacion_coaxial}) y con el modelo teórico según la ecuación \ref{eq:atenuacion_coaxial}.
 Se observa en la figura \ref{fig:atenuacion_comparada} que la atenuación experimental se encuentra entre la que predice el modelo teórico y la que proporciona el fabricante. Esto se debe a que el modelo desprecia muchos factores que influyen en la atenuación y el fabricante trata de dar una cota superior de este añadiendo un margen.
-La constante
+La constnate de fase $\beta$ tiene como pendiente el tiempo de propagación. Está modelada por la ecuación \ref{eq:constante_fase_coaxial} . En la figura \ref{fig:constante_fase.pdf}. Normalizando este para que sean comparables9
 
 La respuesta al impulso que calculamos es compleja y no causal. Hay que hace el módulo y eliminar la parte negativa del eje de tiempo. 
 
 La velocidad de propagación por el cable se puede calcular como $$v_p = \frac{1}{t_d} = \frac{1}{4.55 [ns/m]} = 219.780 \cdot 10^6 [m/s]$$
-%Según el fabricante la velocidad de propagación es del $66 \%$ de la velocidad de la luz $$v_p = 0.66 \cdot 3 \cdot 10^8 [m/s] =  198 \cdot 10^6 [m/s]$$ Se tiene un error en la velocidad de propagación del $9.88 \%$ respecto al valor del fabricante.
+Según el fabricante la velocidad de propagación es del $66 \%$ de la velocidad de la luz $$v_p = 0.66 \cdot 3 \cdot 10^8 [m/s] =  198 \cdot 10^6 [m/s]$$ Se tiene un error en la velocidad de propagación del $9.88 \%$ respecto al valor del fabricante.
+
+\subsection{Ecuaciones}
 
 \begin{eqnarray}
     \label{eq:atenuacion_coaxial}
     \alpha = \sqrt{\frac{\rho \omega \epsilon}{2}} \frac{\frac{1}{d_i} + \frac{1}{d_e}}{\ln{\frac{d_e}{d_i}}}
+\end{eqnarray}
+
+\begin{eqnarray}
+    \label{eq:constante_fase_coaxial}
+    \beta = \omega \sqrt{\mu \varepsilon}
 \end{eqnarray}
 
 \subsection{Figuras y Tablas}
@@ -83,7 +90,25 @@ La velocidad de propagación por el cable se puede calcular como $$v_p = \frac{1
     \centering
     \includegraphics[width=\columnwidth]{figuras/atenuacion_comparada.eps}
     \caption{Atenuación por unidad de longitud en función de la frecuencia en un cable coaxial Belden}
-    \label{fig:atenuacion_comparada}
+    \label{fig:atenuacion_comparada_coaxial}
+\end{figure}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\columnwidth]{figuras/constante_fase.pdf}
+    \caption{Atenuación por unidad de longitud en función de la frecuencia en un cable coaxial Belden}
+    \label{fig:constante_fase}
+\end{figure}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\columnwidth]{figuras/respuesta_impulso.pdf}
+    \caption{Módulo de la respuesta al impulso del cable Belden de 4[m]}
+    \label{fig:respuesta_impulso_coaxial}
+\end{figure}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\columnwidth]{figuras/retardo.eps}
+    \caption{Atenuación por unidad de longitud en función de la frecuencia en un cable coaxial Belden}
+    \label{fig:retardo_coaxial}
 \end{figure}
 
 % -------------------------------------------- %
@@ -93,50 +118,10 @@ La velocidad de propagación por el cable se puede calcular como $$v_p = \frac{1
 
 \subsection{Figuras y Tablas}
 
-%\begin{figure}[htb]
-    %\centering
-    %\includegraphics[width=\columnwidth]{folder/widthfile.eps}
-    %\caption{This is the caption text}
-    %\label{fig:graph}
-%\end{figfigure}
-
-%Ejemplo de Tabla:
-%\begin{table}
-%\renewcommand{\arraystretch}{1.3}
-%\caption{An Example of a Table}
-%\label{table_example}
-%\begin{center}
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{center}
-%\end{table}
-
-%\begin{figure}[htb]
-    %\centering
-    %\includegraphics[width=\columnwidth]{folder/widthfile.eps}
-    %\caption{This is the caption text}
-    %\label{fig:graph}
-%\end{figfigure}
 
 \subsection{Ecuaciones}
 
-Las ecuaciones matemÃ¡ticas deben estar situadas en lÃ­neas distintas y cada
-ecuaciÃ³n matemÃ¡tica debe ser numerada:
-\begin{equation}
-    \underset{t\rightarrow\infty}{\lim}x(t)=\frac{s[f_{\omega}(t)]}{\cos
-    ^{-1}\theta}
-\end{equation}
-
 \subsection{NumeraciÃ³n de pÃ¡ginas}
-
-No aplique ninguna numeraciÃ³n de pÃ¡gina. La numeraciÃ³n se aÃ±adirÃ¡ en el
-proceso final de confecciÃ³n de las actas en CD-ROM. Por favor deje la
-numeraciÃ³n tal como estÃ¡ en el documento modelo.
 
 \subsection{Referencias}
 
@@ -156,7 +141,7 @@ visualmente atractivo y que de lugar a impresiones de calidad. Esta misma
 plantilla se puede encontrar en los formatos OpenDocument (ISO/IEC 26300:2006)
 y Microsoft Word\textsuperscript{\textregistered} en la direcciÃ³n web oficial del Simposium.
 
-%BibliografÃ­a
+%Bibliografía
 
 \begin{thebibliography}{9}                                                                                                %
     \bibitem {ref libro}C. Jones and K. Jones, \emph{How to publish a paper in 30
