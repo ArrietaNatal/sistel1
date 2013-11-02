@@ -16,17 +16,17 @@
 \newcommand{\CLASSINPUToutersidemargin}{12mm}
 \newcommand{\CLASSINPUTtoptextmargin}{20mm}
 \newcommand{\CLASSINPUTbottomtextmargin}{25mm}
-\DeclareGraphicsExtensions{.png,.eps,.ps,.pdf,.jpg}
+\DeclareGraphicsExtensions{.png,.eps,.ps,.eps,.jpg}
 % Hack para corregir las cabeceras de tablas de IEEEtran. Con esto figuras y tablas tienen el mismo formato.
 \makeatletter \def\@IEEEtablestring{} \makeatother
 
 % ------------- DOCUMENT ------------- %
 \title{CARACTERIZACIÓN DE MEDIOS DE TRANSMISIÓN}
 \author{
-    \authorblockN{Pablo Arrieta Nata, Daniel Iñigo Baños.}
-    \authorblockA{uo194468@uniovi.es, uo194823@uniovi.es.}
-    \authorblockA{Grado en Tecnologias y Servicios de Telecomunicación. Universidad de Oviedo.}
-    \authorblockA{Sistemas de Telecomunicación. Curso 2013-14.}
+    \IEEEauthorblockN{Pablo Arrieta Nata, Daniel Iñigo Baños.}
+    \IEEEauthorblockA{uo194468@uniovi.es, uo194823@uniovi.es.}
+    \IEEEauthorblockA{Grado en Tecnologias y Servicios de Telecomunicación. Universidad de Oviedo.}
+    \IEEEauthorblockA{Sistemas de Telecomunicación. Curso 2013-14.}
 }
 \begin{document}
 \maketitle
@@ -41,8 +41,8 @@
 \section{Primer Montaje}
 Empleando un analizador de redes se mide la respuesta en frecuencia de un cable coaxial mediante el parámetro $s_{2,1}$ en el ancho de banda de 1[MHz] a 2[GHz]. Se transmite una potencia de 0[dBm]. El $s_{2,1}$ representa la función de transferencia del cable en módulo-fase.
 A partir de los datos experimentales se mide la atenuación que introduce el cable como $-H(f)$ y se compara con los del fabricante (tabla \ref{tab:atenuacion_coaxial}) y con el modelo teórico según la ecuación \ref{eq:atenuacion_coaxial}.
-Se observa en la figura \ref{fig:atenuacion_comparada} que la atenuación experimental se encuentra entre la que predice el modelo teórico y la que proporciona el fabricante. Esto se debe a que el modelo desprecia muchos factores que influyen en la atenuación y el fabricante trata de dar una cota superior de este añadiendo un margen.
-La constnate de fase $\beta$ tiene como pendiente el tiempo de propagación. Está modelada por la ecuación \ref{eq:constante_fase_coaxial} . En la figura \ref{fig:constante_fase.pdf}. Normalizando este para que sean comparables9
+Se observa en la figura \ref{fig:atenuacion_comparada_coaxial} que la atenuación experimental se encuentra entre la que predice el modelo teórico y la que proporciona el fabricante. Esto se debe a que el modelo desprecia muchos factores que influyen en la atenuación y el fabricante trata de dar una cota superior de este añadiendo un margen.
+La constnate de fase $\beta$ tiene como pendiente el tiempo de propagación. Está modelada por la ecuación \ref{eq:constante_fase_coaxial} . En la figura \ref{fig:constante_fase}. Normalizando este para que sean comparables.
 
 La respuesta al impulso que calculamos es compleja y no causal. Hay que hace el módulo y eliminar la parte negativa del eje de tiempo. 
 
@@ -94,13 +94,13 @@ Según el fabricante la velocidad de propagación es del $66 \%$ de la velocidad
 \end{figure}
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\columnwidth]{figuras/constante_fase.pdf}
+    \includegraphics[width=\columnwidth]{figuras/constante_fase.eps}
     \caption{Atenuación por unidad de longitud en función de la frecuencia en un cable coaxial Belden}
     \label{fig:constante_fase}
 \end{figure}
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=\columnwidth]{figuras/respuesta_impulso.pdf}
+    \includegraphics[width=\columnwidth]{figuras/respuesta_impulso.eps}
     \caption{Módulo de la respuesta al impulso del cable Belden de 4[m]}
     \label{fig:respuesta_impulso_coaxial}
 \end{figure}
