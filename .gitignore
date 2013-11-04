@@ -32,8 +32,9 @@
 *.xdy
 *.tdo
 IEEEtran.cls
-*.pdf
 *.bak
 *.gnuplot
 figuras/*.fig
 /medidas
+/*.pdf
+figuras/*converted-to.pdf
