@@ -155,12 +155,22 @@ Se emplea ahora un medio de transmisión por radiofrecuencia como es el canal Wi
 
  
 Las medidas sobre la WiFi se realizaron según lo indicado en la figura \ref{fig:posiciones_wifi}. Las medidas son aproximadas siendo $4[m]$ una aproximación de la distancia máxima que permitía el cable que unía la antena móvil con el analizador vectorial de redes.
+
+\begin{itemize}
+    \item La primera medida (posición 1 de la figura \ref{fig:posiciones_wifi}) es la más cercana y por lo tanto es la que menos atenuación tiene
+    \item La segunda medida se hizo a mas distancia, por lo que la atenuación es algo mayor 
+    \item La tercera medida (posición 3 de la figura \ref{fig:posiciones_wifi}) se midió con una placa metálica en paralelo para poder observar el efecto de los ecos. Igualmente al ser un ancho de banda tan pequeño observar ese efecto es difícil porque no tiene porque darse en esas frecuencias
+    \item Se realizó una cuarta medida en la misma posición que la tercera pero empleando una polarización vertical y por lo tanto se observa más atenuación que en la medida anterior
+    \item La quinta medida se realizó con un obstáculo (posición 4 de la figura \ref{fig:posiciones_wifi}) que impide la transmisión directa.
+\end{itemize}
+
+Luego también se realizaron las medidas para un ancho de $200[MH]$. En este caso se estudia todo el ancho de banda WiFi, con medidas en posiciones análogas a las realizadas para $20[MH]$
 \begin{itemize}
     \item La primera medida se realiza a muy corta distancia (posición 1 de la figura \ref{fig:posiciones_wifi}) por lo que en la figura \ref{fig:transferencia_wifi} no se aprecia apenas la atenuación que hay en las bandas de guarda.
-    \item La segunda medida se realiza a la máxima distancia que permite el cable pero sin obstáculos. Se aprecia más claramente en la figura 
-    \item 
-    \item La cuarta 
-    \item Se realizó una quinta medida en la misma posición que la ter pero empleando una polarización vertical. Es decir rotando la antena $90\degree$ respecto a la del emisor (o viceversa). La respuesta en frecuencia del canal cae mucho cuando se cambia el plano de polarización.
+    \item La segunda medida se realiza a la máxima distancia que permite el cable pero sin obstáculos. La atenuación es mayor que el caso anterior pero al no haber obstáculos es bastante estable en todo el ancho de banda.
+    \item La tercera medida (posición 3 de la figura \ref{fig:posiciones_wifi}) se midió con una placa metálica en paralelo para poder observar el efecto de los ecos. En la figura \ref{fig:transferencia_wifi} se puede observar esos desvanecimientos de manera clara en los picos de atenuación
+    \item Se realizó una cuarta medida en la misma posición que la tercera pero empleando una polarización vertical. Es decir rotando la antena $90\degree$ respecto a la del emisor (o viceversa). La antena WiFi tiene una polarización vertical lineal (según datos del fabricante) y debido a esto la respuesta en frecuencia del canal cae mucho cuando se cambia el plano de polarización. En la figura \ref{fig:transferencia_wifi} podemos observar como tiene una atenuación considerablemente mayor que la medida anterior, también se aprecia que los ecos tienen menos efecto.
+    \item La quinta medida se realizó con un obstáculo (posición 4 de la figura \ref{fig:posiciones_wifi}) En esta posición no hay transmisión directa y todo lo que medimos viene dado por ecos y por transmisiones multidireccionales por eso se aprecia la mayor atenuación de todas las medidas y grandes desvanecimientos en valores concretos de la frecuencia.
 \end{itemize}
 
 \subsection{Figuras y Tablas}
