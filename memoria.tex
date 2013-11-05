@@ -40,27 +40,46 @@
 % ------------- PRIMER MONTAJE  ------------- %
 % ------------------------------------------- %
 \section{Primer Montaje}
-Empleando un analizador de redes se mide la respuesta en frecuencia de un cable coaxial mediante el parámetro $s_{2,1}$ en el ancho de banda de 1[MHz] a 2[GHz]. Se transmite una potencia de 0[dBm]. El $s_{2,1}$ representa la función de transferencia del cable en módulo-fase.
-A partir de los datos experimentales se mide la atenuación que introduce el cable como $-H(f)$ y se compara con los del fabricante (tabla \ref{tab:atenuacion_coaxial}) y con el modelo teórico según la ecuación \ref{eq:atenuacion_coaxial}.
-Se observa en la figura \ref{fig:atenuacion_comparada_coaxial} que la atenuación experimental se encuentra entre la que predice el modelo teórico y la que proporciona el fabricante. Esto se debe a que el modelo desprecia muchos factores que influyen en la atenuación y el fabricante trata de dar una cota superior de este añadiendo un margen.
-La constnate de fase $\beta$ tiene como pendiente el tiempo de propagación. Está modelada por la ecuación \ref{eq:constante_fase_coaxial} . En la figura \ref{fig:constante_fase}. Normalizando este para que sean comparables.
+Empleando un analizador de redes se mide la respuesta en frecuencia de un cable coaxial mediante el parámetro $s_{2,1}$ en el ancho de banda de 1[MHz] a 2[GHz]. El $s_{2,1}$ representa la función de transferencia del cable en módulo-fase.
 
-La respuesta al impulso que calculamos es compleja y no causal. Hay que hace el módulo y eliminar la parte negativa del eje de tiempo. 
+A partir de los datos experimentales se mide la atenuación que introduce el cable como $-|H(f)|$ y se compara con los del fabricante (tabla~\ref{tab:atenuacion_coaxial}) y con el modelo teórico según la ecuación~\ref{eq:atenuacion_coaxial}.
 
-La velocidad de propagación por el cable se puede calcular como $$v_p = \frac{1}{t_d} = \frac{1}{4.55 [ns/m]} = 219.780 \cdot 10^6 [m/s]$$
-Según el fabricante la velocidad de propagación es del $66 \%$ de la velocidad de la luz $$v_p = 0.66 \cdot 3 \cdot 10^8 [m/s] =  198 \cdot 10^6 [m/s]$$ Se tiene un error en la velocidad de propagación del $9.88 \%$ respecto al valor del fabricante.
+Se observa en la figura~\ref{fig:atenuacion_comparada_coaxial} que la atenuación experimental se encuentra entre la que predice el modelo teórico y la que proporciona el fabricante. Esto se debe a que el modelo desprecia muchos factores que influyen en la atenuación y el fabricante trata de dar una cota superior de este añadiendo un margen.
+La constante de fase $\beta$, que está modelada por la ecuación~\ref{eq:constante_fase_coaxial}, tiene como pendiente el tiempo de propagación.En la figura~\ref{fig:constante_fase} se ha normalizado el retardo para que las constantes de fase sean comparables.
+
+La respuesta al impulso que se calcula a partir de los datos del analizador de redes es compleja y no causal, por lo que para caracterizar el sistema empleamos $|h(t)| \forall t \geq 0$ representado en la figura~\ref{fig:respuesta_impulso_coaxial}.
+
+La velocidad de propagación por el cable se puede calcular, según la ecuación~\ref{eq:vp_coaxial_experimental}, a partir de la medida del tiempo de propagación, que a su vez se puede obtener de la pendiente de la constante de fase o del instante en que se produce la primera delta de la respuesta al impulso (entre la longitud del cable).
+\begin{equation}
+    \label{eq:vp_coaxial_experimental}
+    v_p [m/s] = \frac{1}{t_d} = \frac{1}{4.55 [ns/m]}
+\end{equation}
+
+Según el fabricante la velocidad de propagación es del $66 \%$ de la velocidad de la luz por lo que la $v_p$ se calcularía mediante la ecuación~\ref{eq:vp_coaxial_fabricante} o tomando el valor que aporta directamente en las hojas.
+\begin{equation}
+    \label{eq:vp_coaxial_fabricante}
+    v_p [ms] = 0.66 \cdot 3 \cdot 10^8 [m/s]
+\end{equation}
+
+Se puede calcular también mediante la ecuación~\ref{eq:vp_coaxial_modelo} para el cable coaxial. 
+\begin{equation}
+    \label{eq:vp_coaxial_modelo}
+    v_p = \frac{\omega}{\beta} = \frac{1}{\sqrt{\mu \varepsilon}}
+\end{equation}.
+
+Como se puede ver en la tabla tiene un error en la velocidad de propagación del $9.88 \%$ respecto al valor del fabricante. 
 
 \subsection{Ecuaciones}
 
-\begin{eqnarray}
+\begin{equation}
     \label{eq:atenuacion_coaxial}
     \alpha = \sqrt{\frac{\rho \omega \epsilon}{2}} \frac{\frac{1}{d_i} + \frac{1}{d_e}}{\ln{\frac{d_e}{d_i}}}
-\end{eqnarray}
+\end{equation}
 
-\begin{eqnarray}
+\begin{equation}
     \label{eq:constante_fase_coaxial}
-    \beta = \omega \sqrt{\mu \varepsilon}
-\end{eqnarray}
+    \beta = \omega \sqrt{\mu \varepsilon} = \omega \cdot t_d
+\end{equation}
 
 \subsection{Figuras y Tablas}
 
@@ -93,16 +112,14 @@ Según el fabricante la velocidad de propagación es del $66 \%$ de la velocidad
 	\hline
 	Fuente & Velocidad de Propagación [m/s] \\
 	\hline
-	Fabricante &  \\
-	Modelo & \\
-	Medida & \\	
+	$v_{p fabricante}$ & $198 \cdot 10^6 [m/s]$ \\
+	$v_{p experimental }$ & $219.780 \cdot 10^6 [m/s]$ \\
+	$v_{p modelo}$ & $198.01 \cdot 10^6 [m/s]$ \\
 	\hline
     \end{tabular}
-    \caption{Comparación de las velocidades de propagación de la señal por el cable.}
-    \label{tab:atenuacion_coaxial}
+    \caption{Comparación de las velocidades de propagación de la señal por el cable coaxial Belden.}
+    \label{tab:vp_coaxial}
 \end{table}
-
-
 
 \begin{figure}[htb]
     \centering
