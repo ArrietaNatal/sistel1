@@ -16,6 +16,7 @@
 \newcommand{\CLASSINPUToutersidemargin}{12mm}
 \newcommand{\CLASSINPUTtoptextmargin}{20mm}
 \newcommand{\CLASSINPUTbottomtextmargin}{25mm}
+\newcommand{\degree}{\ensuremath{^\circ}}
 \DeclareGraphicsExtensions{.png,.eps,.ps,.eps,.jpg}
 % Hack para corregir las cabeceras de tablas de IEEEtran. Con esto figuras y tablas tienen el mismo formato.
 \makeatletter \def\@IEEEtablestring{} \makeatother
@@ -85,6 +86,24 @@ Según el fabricante la velocidad de propagación es del $66 \%$ de la velocidad
     \label{tab:atenuacion_coaxial}
 \end{table}
 
+\begin{table}[htb]
+    \renewcommand{\arraystretch}{1.2}
+    \centering
+    \begin{tabular}{|c|c|}
+	\hline
+	Fuente & Velocidad de Propagación [m/s] \\
+	\hline
+	Fabricante &  \\
+	Modelo & \\
+	Medida & \\	
+	\hline
+    \end{tabular}
+    \caption{Comparación de las velocidades de propagación de la señal por el cable.}
+    \label{tab:atenuacion_coaxial}
+\end{table}
+
+
+
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\columnwidth]{figuras/atenuacion_comparada.eps}
@@ -115,46 +134,45 @@ Según el fabricante la velocidad de propagación es del $66 \%$ de la velocidad
 % -------------------------------------------- %
 \section{Segundo Montaje}
 
-Se emplea ahora un medio de transmisión por radiofrecuencia como es el canal WiFi. Su espectro está centrado en $2.4[GHz]$ y los canales tienen un ancho de $20[MH]$. En este caso estudiaremos un solo canal, el que hay en la frecuencia central.Para dar una idea de la $H(f)$ del canal se emplea un $span$ que cubra una parte  el espectro del estandar WiFi. Para caracterizar un canal se emplea un $span$ que cubra sólo este. A la hora de analizar el espectro hay que tener en cuenta que no solo estamos midiendo el canal sino que los cables y las antenas también tienen su ganancia y pérdidas.
+Se emplea ahora un medio de transmisión por radiofrecuencia como es el canal WiFi. Su espectro está centrado en $2.4[GHz]$ y los canales tienen un ancho de $20[MH]$. En este caso estudiaremos un solo canal, el que hay en la frecuencia central.Para dar una idea de la $H(f)$ del canal se emplea un $span$ que cubra una parte  el espectro del estándar WiFi. Para caracterizar un canal se emplea un $span$ que cubra sólo este. A la hora de analizar el espectro hay que tener en cuenta que no solo estamos midiendo el canal sino que los cables y las antenas también tienen su ganancia y pérdidas.
 
  
-Las medidas sobre la wifi se realizaron según lo indicado en la figura \ref{fig:posiciones_wifi}. Las medidas son aproximadas siendo $4[m]$ una aproximación de la distancia máxima que permitía el cable que unía la antena movil con el analizador vectorial de redes.
+Las medidas sobre la WiFi se realizaron según lo indicado en la figura \ref{fig:posiciones_wifi}. Las medidas son aproximadas siendo $4[m]$ una aproximación de la distancia máxima que permitía el cable que unía la antena móvil con el analizador vectorial de redes.
 \begin{itemize}
-    \item La primera medida se realiza a muy corta distancia y debería tener la función de transferencia mas clara.
-    \item La segunda medida 
+    \item La primera medida se realiza a muy corta distancia (posición 1 de la figura \ref{fig:posiciones_wifi}) por lo que en la figura \ref{fig:transferencia_wifi} no se aprecia apenas la atenuación que hay en las bandas de guarda.
+    \item La segunda medida se realiza a la máxima distancia que permite el cable pero sin obstáculos. Se aprecia más claramente en la figura 
     \item 
-    \item La cuarta medida
-    \item Se realizó una quinta medida en la misma posición que la segunda pero empleando una polarización vertical. Es decir rotando la antena $90\textcelsius$ respecto a la del emisor (o viceversa). La respuesta en frecuencia del canal cae mucho cuando se cambia el plano de polarización.
-\end
-
+    \item La cuarta 
+    \item Se realizó una quinta medida en la misma posición que la ter pero empleando una polarización vertical. Es decir rotando la antena $90\degree$ respecto a la del emisor (o viceversa). La respuesta en frecuencia del canal cae mucho cuando se cambia el plano de polarización.
+\end{itemize}
 
 \subsection{Figuras y Tablas}
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\columnwidth]{figuras/posicion_antenas_wifi.pdf}
-    \caption{Topología aproximada para cada medida realizada con las atenas WiFi.}
+    \caption{Topología aproximada para cada medida realizada con las antenas WiFi.}
     \label{fig:posiciones_wifi}
 \end{figure}
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\columnwidth]{figuras/funcion_transferencia_wifi.eps}
-    \caption{Función de transferencia del medio wifi con el span de 200[MHz]}
+    \caption{Función de transferencia del medio wifi con el span de 200[MHz].}
     \label{fig:transferencia_wifi}
 \end{figure}
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=\columnwidth]{figuras/funcion_transferencia_canal_wifi.eps}
-    \caption{Espectro de los canales wifi en cada posición con un span de 20[MHz]}
-    \label{fig:transferencia_canal_wifi}
-\end{figure}
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=\columnwidth]{figuras/respuesta_impulso_wifi.eps}
-    \caption{Respuesta al impulso del canal wifi en cada posición}
-    \label{fig:impulso_wifi}
-\end{figure}
-\subsection{Ecuaciones}
-\section{Conclusiones}
+%\begin{figure}[htb]
+%    \centering
+%    \includegraphics[width=\columnwidth]{figuras/funcion_transferencia_canal_wifi.eps}
+%    \caption{Espectro de los canales wifi en cada posición con un span de 20[MHz]}
+%    \label{fig:transferencia_canal_wifi}
+%\end{figure}
+%\begin{figure}[htb]
+%    \centering
+%    \includegraphics[width=\columnwidth]{figuras/respuesta_impulso_wifi.eps}
+%    \caption{Respuesta al impulso del canal wifi en cada posición}
+%    \label{fig:impulso_wifi}
+%\end{figure}
+%\subsection{Ecuaciones}
+%\section{Conclusiones}
 
 
 % ---------------------------------------- %
