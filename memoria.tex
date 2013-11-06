@@ -157,6 +157,7 @@ Como se puede ver en la tabla tiene un error en la velocidad de propagación del
 % -------------------------------------------- %
 % ------------- SEGUNDO MONTAJE  ------------- %
 % -------------------------------------------- %
+
 \section{Segundo Montaje}
 
 Se emplea ahora un medio de transmisión por radiofrecuencia como es el canal WiFi. Su espectro está centrado en $2.4[GHz]$ y los canales tienen un ancho de $20[MH]$. En este caso estudiaremos un solo canal, el que hay en la frecuencia central.Para dar una idea de la $H(f)$ del canal se emplea un $span$ que cubra sólo este. A la hora de analizar el espectro hay que tener en cuenta que no solo estamos midiendo el canal sino que los cables y las antenas también tienen su ganancia y pérdidas.
@@ -170,6 +171,8 @@ Las medidas sobre la WiFi se realizaron según lo indicado en la figura \ref{fig
     \item Se realizó una cuarta medida en la misma posición que la tercera pero empleando una polarización horizontal y por lo tanto se observa más atenuación que en la medida anterior
     \item La quinta medida se realizó con un obstáculo (posición 4 de la figura \ref{fig:posiciones_wifi}) que impide la transmisión directa.
 \end{itemize}
+
+Todos estos resultados comentados anteriormente se pueden observar en la figura \ref{fig:transferencia_canal_wifi}
 
 Luego también se realizaron las medidas para un ancho de $200[MH]$. En este caso se estudia todo el ancho de banda WiFi, con medidas en posiciones análogas a las realizadas para $20[MH]$
 \begin{itemize}
@@ -196,12 +199,7 @@ Se aprecian varios picos alrededor del impulso principal que no tienen la misma 
 En la figura~\ref{fig:transferencia_wifi} se puede observar caida de potencia en las bandas de guarda de los canales en varias f.d.t. a las mismas frecuencias. Aunque no se ve claramente usando solo una, en conjunto se aprecia que el ancho del canal oscila entre 20 y 25[KHz]
 
 \subsection{Figuras y Tablas}
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=\columnwidth]{figuras/posicion_antenas_wifi.pdf}
-    \caption{Topología aproximada para cada medida realizada con las antenas WiFi.}
-    \label{fig:posiciones_wifi}
-\end{figure}
+
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\columnwidth]{figuras/funcion_transferencia_wifi.eps}
@@ -219,6 +217,12 @@ En la figura~\ref{fig:transferencia_wifi} se puede observar caida de potencia en
     \includegraphics[width=\columnwidth]{figuras/respuesta_impulso_wifi.eps}
     \caption{Respuesta al impulso del WiFi en las diferentes medidas realizadas.}
     \label{fig:respuesta_impulso_wifi}
+\end{figure}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\columnwidth]{figuras/posicion_antenas_wifi.pdf}
+    \caption{Topología aproximada para cada medida realizada con las antenas WiFi.}
+    \label{fig:posiciones_wifi}
 \end{figure}
 %\begin{figure}[htb]
 %    \centering
@@ -238,7 +242,7 @@ En la figura~\ref{fig:transferencia_wifi} se puede observar caida de potencia en
 % ---------------------------------------- %
 % ------------- BIBLIOGRAFÍA ------------- %
 % ---------------------------------------- %
-\newpage
+
 \begin{thebibliography}{2}                                                 %
     \bibitem {ref:libro}Apuntes de Sistemas de Telecomunicación, 2013
     \bibitem {ref:practica}Guión de la práctica de Sistemas de telecomunicación, 2013
