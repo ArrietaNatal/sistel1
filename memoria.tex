@@ -151,8 +151,7 @@ Como se puede ver en la tabla tiene un error en la velocidad de propagación del
 % -------------------------------------------- %
 \section{Segundo Montaje}
 
-Se emplea ahora un medio de transmisión por radiofrecuencia como es el canal WiFi. Su espectro está centrado en $2.4[GHz]$ y los canales tienen un ancho de $20[MH]$. En este caso estudiaremos un solo canal, el que hay en la frecuencia central.Para dar una idea de la $H(f)$ del canal se emplea un $span$ que cubra una parte  el espectro del estándar WiFi. Para caracterizar un canal se emplea un $span$ que cubra sólo este. A la hora de analizar el espectro hay que tener en cuenta que no solo estamos midiendo el canal sino que los cables y las antenas también tienen su ganancia y pérdidas.
-
+Se emplea ahora un medio de transmisión por radiofrecuencia como es el canal WiFi. Su espectro está centrado en $2.4[GHz]$ y los canales tienen un ancho de $20[MH]$. En este caso estudiaremos un solo canal, el que hay en la frecuencia central.Para dar una idea de la $H(f)$ del canal se emplea un $span$ que cubra sólo este. A la hora de analizar el espectro hay que tener en cuenta que no solo estamos midiendo el canal sino que los cables y las antenas también tienen su ganancia y pérdidas.
  
 Las medidas sobre la WiFi se realizaron según lo indicado en la figura \ref{fig:posiciones_wifi}. Las medidas son aproximadas siendo $4[m]$ una aproximación de la distancia máxima que permitía el cable que unía la antena móvil con el analizador vectorial de redes.
 
@@ -160,7 +159,7 @@ Las medidas sobre la WiFi se realizaron según lo indicado en la figura \ref{fig
     \item La primera medida (posición 1 de la figura \ref{fig:posiciones_wifi}) es la más cercana y por lo tanto es la que menos atenuación tiene
     \item La segunda medida se hizo a mas distancia, por lo que la atenuación es algo mayor 
     \item La tercera medida (posición 3 de la figura \ref{fig:posiciones_wifi}) se midió con una placa metálica en paralelo para poder observar el efecto de los ecos. Igualmente al ser un ancho de banda tan pequeño observar ese efecto es difícil porque no tiene porque darse en esas frecuencias
-    \item Se realizó una cuarta medida en la misma posición que la tercera pero empleando una polarización vertical y por lo tanto se observa más atenuación que en la medida anterior
+    \item Se realizó una cuarta medida en la misma posición que la tercera pero empleando una polarización horizontal y por lo tanto se observa más atenuación que en la medida anterior
     \item La quinta medida se realizó con un obstáculo (posición 4 de la figura \ref{fig:posiciones_wifi}) que impide la transmisión directa.
 \end{itemize}
 
@@ -169,9 +168,23 @@ Luego también se realizaron las medidas para un ancho de $200[MH]$. En este cas
     \item La primera medida se realiza a muy corta distancia (posición 1 de la figura \ref{fig:posiciones_wifi}) por lo que en la figura \ref{fig:transferencia_wifi} no se aprecia apenas la atenuación que hay en las bandas de guarda.
     \item La segunda medida se realiza a la máxima distancia que permite el cable pero sin obstáculos. La atenuación es mayor que el caso anterior pero al no haber obstáculos es bastante estable en todo el ancho de banda.
     \item La tercera medida (posición 3 de la figura \ref{fig:posiciones_wifi}) se midió con una placa metálica en paralelo para poder observar el efecto de los ecos. En la figura \ref{fig:transferencia_wifi} se puede observar esos desvanecimientos de manera clara en los picos de atenuación
-    \item Se realizó una cuarta medida en la misma posición que la tercera pero empleando una polarización vertical. Es decir rotando la antena $90\degree$ respecto a la del emisor (o viceversa). La antena WiFi tiene una polarización vertical lineal (según datos del fabricante) y debido a esto la respuesta en frecuencia del canal cae mucho cuando se cambia el plano de polarización. En la figura \ref{fig:transferencia_wifi} podemos observar como tiene una atenuación considerablemente mayor que la medida anterior, también se aprecia que los ecos tienen menos efecto.
+    \item Se realizó una cuarta medida en la misma posición que la tercera pero empleando una polarización horizontal. Es decir rotando la antena $90\degree$ respecto a la del emisor (o viceversa). La antena WiFi tiene una polarización vertical lineal (según datos del fabricante) y debido a esto la respuesta en frecuencia del canal cae mucho cuando se cambia el plano de polarización. En la figura \ref{fig:transferencia_wifi} podemos observar como tiene una atenuación considerablemente mayor que la medida anterior, también se aprecia que los ecos tienen menos efecto.
     \item La quinta medida se realizó con un obstáculo (posición 4 de la figura \ref{fig:posiciones_wifi}) En esta posición no hay transmisión directa y todo lo que medimos viene dado por ecos y por transmisiones multidireccionales por eso se aprecia la mayor atenuación de todas las medidas y grandes desvanecimientos en valores concretos de la frecuencia.
 \end{itemize}
+
+Para calcular el ancho de banda de un canal WiFi lo que tenemos que hacer es medir su potencia central, es decir a $2.4[GHz]$ y luego medir los puntos de frecuencia anterior y posterior donde se registra una perdida de 3dB, la diferencia entre el punto superior e inferior donde encontremos esa perdida es el ancho de banda que se puede asegurar para el canal.
+
+
+
+En la figura \ref{fig:respuesta_impulso_wifi} se ve la respuesta al impulso para las diferentes medidas realizadas  un ancho de banda de $200[MH]$
+Se aprecian varios picos alrededor del impulso principal que no tienen la misma interpretación para todas las medidas.
+\begin{itemize}
+    \item En las medidas 1 y 2 estos picos son poco representativos y se acaban alrededor de los 100 ns porque la mayor parte de la transmisión es directa.
+    \item En la medida 3 el panel metálico en paralelo nos produce ecos mucho más claros debidos a los rebotes que se producen en este panel nos llevan a que la transmisión multicamino tenga mucha mas relevancia.
+    \item La medida 4 se realiza con una polarización horizontal y por tanto los ecos casi no son relevantes porque con esa polarización no se capta suficiente potencia para diferenciarlos
+    \item La última medida se realiza con un obstaculo total en medio y por lo tanto es la medida donde los ecos son más perceptibles porque toda la transmision viene dada por ecos y multicamino.
+\end{itemize}
+
 
 \subsection{Figuras y Tablas}
 \begin{figure}[htb]
@@ -185,6 +198,12 @@ Luego también se realizaron las medidas para un ancho de $200[MH]$. En este cas
     \includegraphics[width=\columnwidth]{figuras/funcion_transferencia_wifi.eps}
     \caption{Función de transferencia del medio wifi con el span de 200[MHz].}
     \label{fig:transferencia_wifi}
+\end{figure}
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\columnwidth]{figuras/respuesta_impulso_wifi.eps}
+    \caption{Respuesta al impulso del WiFi en las diferentes medidas realizadas.}
+    \label{fig:respuesta_impulso_wifi}
 \end{figure}
 %\begin{figure}[htb]
 %    \centering
