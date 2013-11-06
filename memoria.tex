@@ -1,6 +1,14 @@
 % ------------- PREAMBLE ------------- %
 % Currently using IEEEtran 1.8
 \documentclass[10pt,conference,a4paper]{IEEEtran}
+
+\usepackage[spanish,es-nosectiondot,es-tabla,es-nolists,es-notilde]{babel}
+% Intenta corregir los efectos indeseados de babel
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+\addto\extrasspanish{\def\tablename{Tabla}}
+\addto\extrasspanish{\def\figurename{Fig.}}
+
 \usepackage{amsmath}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
